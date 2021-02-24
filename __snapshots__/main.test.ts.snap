@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Placeholder Some Test 1`] = `
+Array [
+  Object {
+    "apiVersion": "apps/v1",
+    "kind": "Deployment",
+    "metadata": Object {
+      "name": "test-chart-sample-app-deployment-c82c4ed7",
+    },
+    "spec": Object {
+      "replicas": 2,
+      "selector": Object {
+        "matchLabels": Object {
+          "app": "test-chart-sample-app-c80c3b72",
+        },
+      },
+      "template": Object {
+        "metadata": Object {
+          "labels": Object {
+            "app": "test-chart-sample-app-c80c3b72",
+          },
+        },
+        "spec": Object {
+          "containers": Array [
+            Object {
+              "image": "bryanchua/sample-expressjs-microservice:latest",
+              "name": "sample-app",
+              "ports": Array [
+                Object {
+                  "containerPort": 3000,
+                },
+              ],
+            },
+          ],
+        },
+      },
+    },
+  },
+  Object {
+    "apiVersion": "v1",
+    "kind": "Service",
+    "metadata": Object {
+      "name": "test-chart-sample-app-service-c89f2dd3",
+    },
+    "spec": Object {
+      "ports": Array [
+        Object {
+          "port": 80,
+          "targetPort": 3000,
+        },
+      ],
+      "selector": Object {
+        "app": "test-chart-sample-app-c80c3b72",
+      },
+      "type": "LoadBalancer",
+    },
+  },
+]
+`;
